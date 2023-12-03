@@ -7,6 +7,12 @@
 # Inherit from sm8150-common
 include device/xiaomi/sm8150-common/BoardConfigCommon.mk
 
+# FM
+ifndef BOARD_HAVE_QCOM_FM
+BOARD_HAVE_QCOM_FM := false
+endif
+
+
 DEVICE_PATH := device/xiaomi/cepheus
 
 BUILD_BROKEN_DUP_RULES := true
