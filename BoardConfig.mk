@@ -7,18 +7,15 @@
 # Inherit from sm8150-common
 include device/xiaomi/sm8150-common/BoardConfigCommon.mk
 
-# FM
-ifndef BOARD_HAVE_QCOM_FM
-BOARD_HAVE_QCOM_FM := false
-endif
-
-
 DEVICE_PATH := device/xiaomi/cepheus
 
 BUILD_BROKEN_DUP_RULES := true
 
 # Display
 TARGET_SCREEN_DENSITY := 440
+
+# FM
+BOARD_HAVE_QCOM_FM := false
 
 # Init
 TARGET_INIT_VENDOR_LIB := //$(DEVICE_PATH):init_xiaomi_cepheus
