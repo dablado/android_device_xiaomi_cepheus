@@ -1,0 +1,26 @@
+android_app {
+    name: "AdditionalButtons",
+
+    srcs: ["src/**/*.java"],
+    resource_dirs: ["res"],
+
+    certificate: "platform",
+    platform_apis: true,
+    system_ext_specific: true,
+    privileged: true,
+
+    static_libs: [
+        "androidx.appcompat_appcompat",
+        "androidx.dynamicanimation_dynamicanimation",
+        "androidx.palette_palette",
+        "androidx.recyclerview_recyclerview",
+        "jsr305",
+        "org.lineageos.platform.internal",
+        "SystemUISharedLib",
+        "LineagePreferenceLib",
+    ],
+
+    optimize: {
+        proguard_flags_files: ["proguard.flags"],
+    },
+}

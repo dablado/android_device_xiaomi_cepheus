@@ -1,0 +1,13 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory android:title="@string/title_activity_additional_buttons">
+
+        <SwitchPreferenceCompat
+            android:key="ai_button_torch"
+            android:summaryOff="@string/torch_summary_off"
+            android:summaryOn="@string/torch_summary_on"
+            android:title="@string/ai_button_torch_title" />
+
+    </PreferenceCategory>
+
+</PreferenceScreen>

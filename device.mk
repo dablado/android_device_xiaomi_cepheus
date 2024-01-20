@@ -28,6 +28,12 @@ PRODUCT_PACKAGES += \
     libmegface \
     libpiex_shim
 
+PRODUCT_ARTIFACT_PATH_REQUIREMENT_ALLOWED_LIST += \
+	system_ext/priv_app/AdditionalButtons/%
+
+PRODUCT_PACKAGES += \
+    AdditionalButtons
+
 # Remove unwanted packages
 PRODUCT_PACKAGES += \
     RemovePackages

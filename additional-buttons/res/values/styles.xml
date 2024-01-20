@@ -1,0 +1,6 @@
+<resources>
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.DayNight">
+    <!-- Use the light statusbar only when in day/light mode -->
+    </style>
+</resources>

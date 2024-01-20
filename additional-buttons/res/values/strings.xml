@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Additional Buttons</string>
+    <string name="title_activity_additional_buttons">Additional Buttons</string>
+
+    <!-- Sync Preferences -->
+    <string name="ai_header">AI Button</string>
+    <string name="ai_button_torch_title">Long press for torch</string>
+    <string name="torch_summary_on">Activate the torch by long pressing the AI button</string>
+    <string name="torch_summary_off">Activate the torch by long pressing the AI button</string>
+</resources>
