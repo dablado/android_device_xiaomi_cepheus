@@ -4,6 +4,7 @@ import android.content.ContentResolver;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.os.UserHandle;
 import android.provider.Settings;
 import android.util.Log;
 
@@ -43,8 +44,10 @@ public class SettingsFragment extends PreferenceFragmentCompat
             KeyHandler.mTorchEnabled = torch;
 
             final ContentResolver resolver = context.getContentResolver();
-            Settings.System.putInt(resolver,
-                    SETTINGS_PREFIX + AI_BUTTON_TORCH, torch ? 1 : 0);
+            Settings.System.putIntForUser(resolver,
+                    SETTINGS_PREFIX + AI_BUTTON_TORCH, torch ? 1 : 0,
+                    UserHandle.USER_CURRENT
+            );
         } else {
             Log.e(TAG, "KeyHandler: SwitchPreferenceCompat is null. Unable to proceed.");
         }
@@ -60,8 +63,8 @@ public class SettingsFragment extends PreferenceFragmentCompat
 
         Log.d(TAG, "KeyHandler: updating torch: " + torch);
         final ContentResolver resolver = requireContext().getContentResolver();
-        Settings.System.putInt(resolver,
-                SETTINGS_PREFIX + AI_BUTTON_TORCH, torch ? 1 : 0);
+        Settings.System.putIntForUser(resolver,
+                SETTINGS_PREFIX + AI_BUTTON_TORCH, torch ? 1 : 0, UserHandle.USER_CURRENT);
 
         return true;
     }
