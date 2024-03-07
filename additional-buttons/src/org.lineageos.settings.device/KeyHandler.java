@@ -15,6 +15,7 @@ import android.hardware.camera2.CameraManager;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
+import android.os.UserHandle;
 import android.provider.Settings;
 import android.util.Log;
 import android.view.KeyEvent;
@@ -53,8 +54,9 @@ public class KeyHandler implements DeviceKeyHandler {
             Log.d(TAG, "KeyHandler: AI button pressed");
 
             try {
-                final int torch = Settings.System.getInt(resolver,
-                        SettingsFragment.SETTINGS_PREFIX + AI_BUTTON_TORCH);
+                final int torch = Settings.System.getIntForUser(resolver,
+                        SettingsFragment.SETTINGS_PREFIX + AI_BUTTON_TORCH,
+                        UserHandle.USER_CURRENT);
                 Log.d(TAG, "KeyHandler: system setting torch " + torch);
                 if (1 == torch) {
                     Log.d(TAG, "KeyHandler: torch enabled");

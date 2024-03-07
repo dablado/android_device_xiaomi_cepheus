@@ -11,6 +11,7 @@ import android.content.ContentResolver;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.os.UserHandle;
 import android.provider.Settings;
 import android.util.Log;
 import android.view.MenuItem;
@@ -56,7 +57,9 @@ public class AdditionalButtonsActivity extends AppCompatActivity {
         Log.d(TAG, "KeyHandler: loading torch " + torch);
 
         final ContentResolver resolver = context.getContentResolver();
-        Settings.System.putInt(resolver,
-                SETTINGS_PREFIX + AI_BUTTON_TORCH, torch ? 1 : 0);
+        Settings.System.putIntForUser(resolver,
+                SETTINGS_PREFIX + AI_BUTTON_TORCH, torch ? 1 : 0,
+                UserHandle.USER_CURRENT
+        );
     }
 }
